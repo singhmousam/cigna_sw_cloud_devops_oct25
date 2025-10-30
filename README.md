@@ -1,9 +1,9 @@
 ________________________________________
-Problem Statement: "Backup Organizer CLI Tool"
-Objective
+## Problem Statement: "Backup Organizer CLI Tool"
+### Objective
 Create a Python script that organizes and backs up files from a source directory into a destination directory based on file types. The script should be modular, accept command-line arguments, handle exceptions gracefully, and use basic data structures for organization.
 ________________________________________
-Functional Requirements
+### Functional Requirements
 1.	Command-Line Arguments (argparse)
 Accept the following arguments:
 o	--source: Path to the source directory
@@ -24,9 +24,8 @@ o	Print user-friendly error messages.
 o	Use dictionaries to group files by extension.
 o	Use lists to store file paths.
 
-
 ________________________________________
-Example Usage
+### Example Usage
 python main.py --source ./downloads --destination ./backup --filetypes .pdf,.png
 This should:
 •	Scan ./downloads for .pdf and .png files
