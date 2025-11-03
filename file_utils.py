@@ -20,13 +20,14 @@ def backup_files(source, destination, filetypes):
         print("Source does not exist")
         raise FileNotFoundError(f"{source} Does Not Exist")
 
+    if not  os.path.exists(destination):
+        os.mkdir(destination)
+        
     try:
         if os.path.exists(destination):
             for i in filetypes:
                 try:
                     os.mkdir(os.path.join(destination, i))
-                except FileExistsError:
-                    pass
                 except Exception as e:
                     print(f"Error creating subfolder {i}: {e}")
 
