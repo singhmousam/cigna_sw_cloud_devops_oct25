@@ -1,0 +1,17 @@
+stages:
+  build
+  push
+  deploy
+
+variables:
+  HOME: "$pwd/app"
+
+build:
+  pytest test.py
+  docker build -t aws.ecr.cignahc_at/backup_utility:v0
+
+push:
+  docker push aws.ecr.cignahc_at/backup_utility:v0
+
+deploy:
+  aws create-lambda {app-name} aws.ecr.cignahc_at/backup_utility:v0
