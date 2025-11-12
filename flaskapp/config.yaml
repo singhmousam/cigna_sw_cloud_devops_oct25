@@ -1,0 +1,12 @@
+aws
+  bucket_name=''
+  access_key=''
+  secret_key=''
+
+webmd
+  user=webmd
+  directory=webmd
+  client_id=webmd_1010
+
+evernorth
+  user=xyz
