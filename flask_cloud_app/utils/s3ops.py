@@ -9,13 +9,13 @@ load_dotenv('../.env')
 
 class S3Ops:
     def __init__(self):
-        self.access_key = os.getenv('AWS_ACCESS_KEY', 
+        access_key = os.getenv('AWS_ACCESS_KEY', 
                                     'Pass expected access key id')
-        self.secret_key = os.getenv('AWS_SECRET_KEY', 
+        secret_key = os.getenv('AWS_SECRET_KEY', 
                                     'Pass expected access key id')
-        self.session = Session(aws_access_key_id=self.access_key,
-                               aws_secret_access_key=self.secret_key)
-        print('Access Key:', self.access_key)
+        self.session = Session(aws_access_key_id=access_key,
+                               aws_secret_access_key=secret_key)
+        # print('Access Key:', self.access_key)
         self.client = self.session.client('s3')
 
     def upload_file(self, bucket_name, file_path, file_object):

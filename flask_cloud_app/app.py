@@ -23,8 +23,8 @@ def upload_file():
             flash("No file uploaded")
             return redirect(request.url)
         file = request.files["file"]
-        if file.filename == "":
-            flash("No selected file")
+        if file.filename == "" or not file.filename.endswith(".txt"):
+            flash("No selected file, Invalid txt file")
             return redirect(request.url)
         if file:
             filename = secure_filename(file.filename)
