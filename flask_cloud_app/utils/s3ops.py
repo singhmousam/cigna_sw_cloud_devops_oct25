@@ -5,7 +5,7 @@ from boto3 import Session
 import boto3
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv('../.env')
 
 class S3Ops:
     def __init__(self):
@@ -15,10 +15,10 @@ class S3Ops:
                                     'Pass expected access key id')
         self.session = Session(aws_access_key_id=self.access_key,
                                aws_secret_access_key=self.secret_key)
+        print('Access Key:', self.access_key)
         self.client = self.session.client('s3')
-        self.client = boto3.client('s3')
 
-    def upload__file(self, bucket_name, file_path, file_object):
+    def upload_file(self, bucket_name, file_path, file_object):
         """
         """
         try:

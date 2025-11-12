@@ -1,1 +1,1 @@
-bucket_name = 'awsbucket'
+bucket_name = 'ms-custom-data-bucket'
