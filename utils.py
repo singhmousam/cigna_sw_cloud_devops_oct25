@@ -1,5 +1,5 @@
 import os
-
+@
 def read_filtered_files(path, file_type=['txt']):
     """
     Create a dict of read files on basis of applied filters
