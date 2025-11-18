@@ -7,7 +7,7 @@ import pandas as pd
 
 app = FastAPI()
 
-# gloabl list for string claims data
+# global list for string claims data
 claims_list = []
 
 @app.get('/')
@@ -59,8 +59,7 @@ def write_csv():
     try:
         print(claims_list)
         df = pd.DataFrame(claims_list)
-                        #   , index=['claim_id']
-        df.to_csv('./data/claims_data.csv')
+        df.to_csv('./data/claims_data.csv', index=False)
         return JSONResponse({
                 'status': 200,
                 'message': 'Data saved to disc'
